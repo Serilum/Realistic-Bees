@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.natamus.realisticbees.forge.mixin",
+  "plugin": "com.natamus.collective.forge.mixin.plugin.ForgeMixinConfigPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "realisticbees_forge.refmap.json",
+  "mixins": [
+    "BeeMixin",
+    "BeehiveBlockEntityMixin"
+  ],
+  "client": [
+    "BeeRendererMixin",
+    "LivingEntityRendererMixin"
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
