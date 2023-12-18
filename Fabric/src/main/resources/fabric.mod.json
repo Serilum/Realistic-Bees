@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "id": "realisticbees",
-  "version": "3.5",
+  "version": "3.7",
 
   "name": "Realistic Bees",
   "description": "Bees are tiny, more bee spawns and bigger space in beehives.",
   "authors": [ "Rick South" ],
   "contact": {
-    "homepage": "https://curseforge.com/minecraft/mc-mods/realistic-bees",
-    "sources": "https://github.com/ricksouth/serilum-mc-mod-sources/tree/main/sources/Realistic%20Bees",
-    "issues": "https://github.com/ricksouth/serilum-mc-mods/labels/Mod:%20Realistic%20Bees"
+    "homepage": "https://serilum.com/mod/realistic-bees",
+    "sources": "https://github.com/Serilum/Realistic-Bees",
+    "issues": "https://github.com/Serilum/.issue-tracker/labels/Mod:%20Realistic%20Bees"
   },
 
   "license": "All Right Reserved",
@@ -26,7 +26,7 @@
     "fabric": "*",
     "minecraft": ">=1.19",
     "java": ">=17",
-    "collective": ">=7.3"
+    "collective": ">=7.21"
   },
 
   "custom": {
