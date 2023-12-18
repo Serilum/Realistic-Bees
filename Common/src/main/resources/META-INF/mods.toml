@@ -1,14 +1,14 @@
 modLoader="javafml"
 loaderVersion="*"
 license="All rights reserved"
-issueTrackerURL="https://github.com/ricksouth/serilum-mc-mods/labels/Mod:%20Realistic%20Bees"
+issueTrackerURL="https://github.com/Serilum/.issue-tracker/labels/Mod:%20Realistic%20Bees"
 logoFile="icon.png"
 
 [[mods]]
 modId="realisticbees"
-version="3.6"
+version="3.7"
 displayName="Realistic Bees"
-displayURL="https://curseforge.com/minecraft/mc-mods/realistic-bees"
+displayURL="https://serilum.com/mod/realistic-bees"
 authors="Rick South"
 description='''Bees are tiny, more bee spawns and bigger space in beehives.
 '''
@@ -21,13 +21,15 @@ If you would like to contribute too, check out https://ricksouth.com/donate. App
 
 [[dependencies.realisticbees]]
     modId="collective"
+    type="required"
     mandatory=true
-    versionRange="[7.13,)"
+    versionRange="[7.21,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.realisticbees]]
     modId="minecraft"
+    type="required"
     mandatory=true
     versionRange="[1.20.4]"
     ordering="NONE"
