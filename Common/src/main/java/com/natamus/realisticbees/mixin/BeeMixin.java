@@ -1,4 +1,4 @@
-package com.natamus.realisticbees.forge.mixin;
+package com.natamus.realisticbees.mixin;
 
 import com.natamus.collective.functions.EntityFunctions;
 import com.natamus.realisticbees.config.ConfigHandler;

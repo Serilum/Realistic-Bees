@@ -1,4 +1,4 @@
-package com.natamus.realisticbees.neoforge.mixin;
+package com.natamus.realisticbees.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.natamus.realisticbees.config.ConfigHandler;
