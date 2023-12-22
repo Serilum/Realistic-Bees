@@ -1,4 +1,4 @@
-package com.natamus.realisticbees.forge.mixin;
+package com.natamus.realisticbees.mixin;
 
 import com.natamus.realisticbees.config.ConfigHandler;
 import net.minecraft.client.model.BeeModel;

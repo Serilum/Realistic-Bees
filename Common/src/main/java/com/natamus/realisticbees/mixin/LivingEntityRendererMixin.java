@@ -1,4 +1,4 @@
-package com.natamus.realisticbees.fabric.mixin;
+package com.natamus.realisticbees.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.natamus.realisticbees.config.ConfigHandler;

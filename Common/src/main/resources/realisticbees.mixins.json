@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.natamus.realisticbees.fabric.mixin",
+  "package": "com.natamus.realisticbees.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BeehiveBlockEntityMixin",
