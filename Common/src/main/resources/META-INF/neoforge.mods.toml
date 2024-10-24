@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="*"
+license="All rights reserved"
+issueTrackerURL="https://github.com/Serilum/.issue-tracker/labels/Mod:%20Realistic%20Bees"
+logoFile="icon.png"
+
+[[mods]]
+modId="realisticbees"
+version="4.0"
+displayName="Realistic Bees"
+displayURL="https://serilum.com/mod/realistic-bees"
+authors="Rick South"
+description='''Bees are tiny, more bee spawns and bigger space in beehives.
+'''
+credits='''Thank you very much to my Membership sponsors for supporting the development of this mod:  
+
+Alister, Andrean Olgo, aternosorg, Cherriesaurus, kate1073, Michael W. S., Tyler Behl, XAgent   
+
+If you would like to contribute too, check out https://serilum.com/donate. Appreciate it! <3   
+'''
+
+[[dependencies.realisticbees]]
+    modId="collective"
+    type="required"
+    versionRange="[7.88,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.realisticbees]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.2,1.21.3]"
+    ordering="NONE"
+    side="BOTH"
+
+[[mixins]]
+    config = "realisticbees.mixins.json"
