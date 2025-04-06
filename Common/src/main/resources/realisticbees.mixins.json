@@ -4,17 +4,18 @@
   "package": "com.natamus.realisticbees.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-	"BeehiveBlockEntityMixin",
-	"BeeMixin",
-	"LivingEntityMixin"
+    "BeehiveBlockEntityMixin",
+    "BeeMixin",
+    "BeeNestDestroyedTriggerMixin",
+    "LivingEntityMixin"
   ],
   "client": [
-	"BeeRendererMixin",
-	"LivingEntityRendererMixin"
+    "BeeRendererMixin",
+    "LivingEntityRendererMixin"
   ],
   "server": [
   ],
   "injectors": {
-	"defaultRequire": 1
+    "defaultRequire": 1
   }
 }
