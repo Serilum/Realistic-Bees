@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = LivingEntity.class, priority = 1001)
 public class LivingEntityMixin {
-    @Inject(method = "getScale()F", at = @At(value = "HEAD"), cancellable = true)
+    @Inject(method = "getScale", at = @At(value = "HEAD"), cancellable = true)
     public void getScale(CallbackInfoReturnable<Float> cir) {
         if ((LivingEntity)(Object)this instanceof Bee bee) {
             AttributeMap $$0 = bee.getAttributes();
