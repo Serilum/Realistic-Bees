@@ -16,7 +16,7 @@ public class BeehiveBlockEntityMixin {
         cir.setReturnValue(((BeehiveBlockEntity)(Object)this).getOccupantCount() == ConfigHandler.beeHiveBeeSpace);
     }
 
-    @ModifyConstant(method = "addOccupant(Lnet/minecraft/world/entity/Entity;)V", constant = @Constant(intValue = 3))
+    @ModifyConstant(method = "addOccupant", constant = @Constant(intValue = 3))
     public int addOccupantWithPresetTicks_increaseSize(int size) {
         return ConfigHandler.beeHiveBeeSpace;
     }
