@@ -1,7 +1,7 @@
 package com.natamus.realisticbees.mixin;
 
-import net.minecraft.advancements.criterion.BeeNestDestroyedTrigger;
-import net.minecraft.advancements.criterion.MinMaxBounds;
+import net.minecraft.advancements.predicates.MinMaxBounds;
+import net.minecraft.advancements.triggers.BeeNestDestroyedTrigger;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Final;

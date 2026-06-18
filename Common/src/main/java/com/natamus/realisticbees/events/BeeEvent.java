@@ -8,7 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.animal.bee.Bee;
@@ -66,7 +66,7 @@ public class BeeEvent {
 
     		ServerLevel serverLevel = (ServerLevel)level;
     		for (int i = 0; i < extrabees; i++) {
-    			Bee newbee = EntityType.BEE.create(level, EntitySpawnReason.NATURAL);
+    			Bee newbee = EntityTypes.BEE.create(level, EntitySpawnReason.NATURAL);
     			newbee.setPos(beevec.x, beevec.y, beevec.z);
     			newbee.addTag(Reference.MOD_ID + ".ignorebee");
     			SpawnEntityFunctions.spawnEntityOnNextTick(serverLevel, newbee);
