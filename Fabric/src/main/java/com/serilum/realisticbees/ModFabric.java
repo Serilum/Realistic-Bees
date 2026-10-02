@@ -1,10 +1,10 @@
-package com.natamus.realisticbees;
+package com.serilum.realisticbees;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.collective.fabric.callbacks.CollectiveSpawnEvents;
-import com.natamus.realisticbees.events.BeeEvent;
-import com.natamus.realisticbees.util.Reference;
+import com.serilum.realisticbees.events.BeeEvent;
+import com.serilum.realisticbees.util.Reference;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.minecraft.core.BlockPos;

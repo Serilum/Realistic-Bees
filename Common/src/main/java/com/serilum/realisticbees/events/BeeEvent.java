@@ -1,9 +1,9 @@
-package com.natamus.realisticbees.events;
+package com.serilum.realisticbees.events;
 
 import com.natamus.collective.functions.SpawnEntityFunctions;
 import com.natamus.collective.functions.TaskFunctions;
-import com.natamus.realisticbees.config.ConfigHandler;
-import com.natamus.realisticbees.util.Reference;
+import com.serilum.realisticbees.config.ConfigHandler;
+import com.serilum.realisticbees.util.Reference;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -62,15 +62,15 @@ public class BeeEvent {
 		}
 		
 		TaskFunctions.enqueueImmediateTask(level, () -> {
-        	Vec3 beevec = entity.position();
+			Vec3 beevec = entity.position();
 
-    		ServerLevel serverLevel = (ServerLevel)level;
-    		for (int i = 0; i < extrabees; i++) {
-    			Bee newbee = EntityType.BEE.create(level);
-    			newbee.setPos(beevec.x, beevec.y, beevec.z);
-    			newbee.addTag(Reference.MOD_ID + ".ignorebee");
-    			SpawnEntityFunctions.spawnEntityOnNextTick(serverLevel, newbee);
-    		}
-        }, false);
+			ServerLevel serverLevel = (ServerLevel)level;
+			for (int i = 0; i < extrabees; i++) {
+				Bee newbee = EntityType.BEE.create(level);
+				newbee.setPos(beevec.x, beevec.y, beevec.z);
+				newbee.addTag(Reference.MOD_ID + ".ignorebee");
+				SpawnEntityFunctions.spawnEntityOnNextTick(serverLevel, newbee);
+			}
+		}, false);
 	}
 }

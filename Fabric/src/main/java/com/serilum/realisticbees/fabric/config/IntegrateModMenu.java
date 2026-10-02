@@ -1,7 +1,7 @@
-package com.natamus.realisticbees.fabric.config;
+package com.serilum.realisticbees.fabric.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.realisticbees.util.Reference;
+import com.serilum.realisticbees.util.Reference;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 

@@ -1,7 +1,7 @@
-package com.natamus.realisticbees.forge.config;
+package com.serilum.realisticbees.forge.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.realisticbees.util.Reference;
+import com.serilum.realisticbees.util.Reference;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.ModLoadingContext;
 

@@ -1,4 +1,4 @@
-package com.natamus.realisticbees.mixin;
+package com.serilum.realisticbees.mixin;
 
 import net.minecraft.advancements.critereon.BeeNestDestroyedTrigger;
 import net.minecraft.advancements.critereon.MinMaxBounds;
@@ -13,12 +13,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = BeeNestDestroyedTrigger.TriggerInstance.class, priority = 1001)
 public class BeeNestDestroyedTriggerMixin {
-    @Shadow private @Final MinMaxBounds.Ints numBees;
+	@Shadow private @Final MinMaxBounds.Ints numBees;
 
-    @Inject(method = "matches", at = @At(value = "HEAD"), cancellable = true)
-    public void matches(BlockState blockState, ItemStack itemStack, int numBees, CallbackInfoReturnable<Boolean> cir) {
-        if (this.numBees.getMin() >= 3) {
-            cir.setReturnValue(true);
-        }
-    }
+	@Inject(method = "matches", at = @At(value = "HEAD"), cancellable = true)
+	public void matches(BlockState blockState, ItemStack itemStack, int numBees, CallbackInfoReturnable<Boolean> cir) {
+		if (this.numBees.getMin() >= 3) {
+			cir.setReturnValue(true);
+		}
+	}
 }

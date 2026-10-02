@@ -1,6 +1,6 @@
-package com.natamus.realisticbees.mixin;
+package com.serilum.realisticbees.mixin;
 
-import com.natamus.realisticbees.config.ConfigHandler;
+import com.serilum.realisticbees.config.ConfigHandler;
 import net.minecraft.client.model.BeeModel;
 import net.minecraft.client.renderer.entity.BeeRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

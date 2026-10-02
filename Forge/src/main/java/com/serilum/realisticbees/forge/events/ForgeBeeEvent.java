@@ -1,7 +1,7 @@
-package com.natamus.realisticbees.forge.events;
+package com.serilum.realisticbees.forge.events;
 
 import com.natamus.collective.functions.WorldFunctions;
-import com.natamus.realisticbees.events.BeeEvent;
+import com.serilum.realisticbees.events.BeeEvent;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.MobSpawnEvent;

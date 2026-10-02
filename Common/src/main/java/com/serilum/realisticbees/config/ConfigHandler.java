@@ -1,7 +1,7 @@
-package com.natamus.realisticbees.config;
+package com.serilum.realisticbees.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.realisticbees.util.Reference;
+import com.serilum.realisticbees.util.Reference;
 
 import java.util.Arrays;
 import java.util.HashMap;

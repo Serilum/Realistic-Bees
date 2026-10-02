@@ -1,7 +1,7 @@
-package com.natamus.realisticbees.mixin;
+package com.serilum.realisticbees.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.natamus.realisticbees.config.ConfigHandler;
+import com.serilum.realisticbees.config.ConfigHandler;
 import net.minecraft.client.renderer.entity.BeeRenderer;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.world.entity.LivingEntity;

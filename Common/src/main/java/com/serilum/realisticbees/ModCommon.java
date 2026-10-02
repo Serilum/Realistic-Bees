@@ -1,6 +1,6 @@
-package com.natamus.realisticbees;
+package com.serilum.realisticbees;
 
-import com.natamus.realisticbees.config.ConfigHandler;
+import com.serilum.realisticbees.config.ConfigHandler;
 
 public class ModCommon {
 
