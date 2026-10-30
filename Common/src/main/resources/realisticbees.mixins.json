@@ -6,12 +6,9 @@
   "mixins": [
     "BeehiveBlockEntityMixin",
     "BeeMixin",
-    "BeeNestDestroyedTriggerMixin",
-    "LivingEntityMixin"
+    "BeeNestDestroyedTriggerMixin"
   ],
   "client": [
-    "BeeRendererMixin",
-    "LivingEntityRendererMixin"
   ],
   "server": [
   ],

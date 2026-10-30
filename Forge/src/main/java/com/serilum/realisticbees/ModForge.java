@@ -1,7 +1,7 @@
 package com.serilum.realisticbees;
 
-import com.natamus.collective.check.RegisterMod;
-import com.natamus.collective.check.ShouldLoadCheck;
+import com.natamus.collective_common_forge.check.RegisterMod;
+import com.natamus.collective_common_forge.check.ShouldLoadCheck;
 import com.serilum.realisticbees.forge.events.ForgeBeeEvent;
 import com.serilum.realisticbees.forge.config.IntegrateForgeConfig;
 import com.serilum.realisticbees.util.Reference;

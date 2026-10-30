@@ -1,7 +1,7 @@
 package com.serilum.realisticbees;
 
-import com.natamus.collective.check.RegisterMod;
-import com.natamus.collective.check.ShouldLoadCheck;
+import com.natamus.collective_common_fabric.check.RegisterMod;
+import com.natamus.collective_common_fabric.check.ShouldLoadCheck;
 import com.natamus.collective.fabric.callbacks.CollectiveSpawnEvents;
 import com.serilum.realisticbees.events.BeeEvent;
 import com.serilum.realisticbees.util.Reference;

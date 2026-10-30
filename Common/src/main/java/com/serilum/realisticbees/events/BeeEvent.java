@@ -11,6 +11,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.bee.Bee;
 import net.minecraft.world.level.BaseSpawner;
 import net.minecraft.world.level.Level;
@@ -32,7 +33,7 @@ public class BeeEvent {
 			return;
 		}
 
-		if (!(entity instanceof Bee)) {
+		if (!(entity instanceof Bee bee)) {
 			return;
 		}
 		
@@ -41,6 +42,7 @@ public class BeeEvent {
 			return;
 		}
 		entity.addTag(Reference.MOD_ID + ".ignorebee");
+		applyConfiguredScaleIfDefault(bee);
 
 		if (tags.contains("SpawnReason.BUCKET") || tags.contains("SpawnReason.SPAWN_EGG")) {
 			return;
@@ -55,8 +57,7 @@ public class BeeEvent {
 		if (extrabees == 0) {
 			return;
 		}
-		
-		Bee bee = (Bee)entity;
+
 		if (bee.isBaby()) {
 			return;
 		}
@@ -69,8 +70,24 @@ public class BeeEvent {
 				Bee newbee = EntityTypes.BEE.create(level, EntitySpawnReason.NATURAL);
 				newbee.setPos(beevec.x, beevec.y, beevec.z);
 				newbee.addTag(Reference.MOD_ID + ".ignorebee");
+				applyConfiguredScaleIfDefault(newbee);
 				SpawnEntityFunctions.spawnEntityOnNextTick(serverLevel, newbee);
 			}
 		}, false);
+	}
+
+	/**
+	 * Sets {@link Attributes#SCALE} to the configured size when the bee still has default scale (1.0).
+	 * Custom scales (admin / other mods) are left untouched. Applies to adults and babies.
+	 */
+	private static void applyConfiguredScaleIfDefault(Bee bee) {
+		var attr = bee.getAttribute(Attributes.SCALE);
+		if (attr == null) {
+			return;
+		}
+		if (Math.abs(attr.getBaseValue() - 1.0D) > 1.0E-6D) {
+			return;
+		}
+		attr.setBaseValue(ConfigHandler.beeSizeModifier);
 	}
 }
