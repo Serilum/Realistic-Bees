@@ -9,8 +9,6 @@
     "BeeNestDestroyedTriggerMixin"
   ],
   "client": [
-    "BeeRendererMixin",
-    "LivingEntityRendererMixin"
   ],
   "server": [
   ],

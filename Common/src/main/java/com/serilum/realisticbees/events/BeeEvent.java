@@ -4,6 +4,7 @@ import com.natamus.collective.functions.SpawnEntityFunctions;
 import com.natamus.collective.functions.TaskFunctions;
 import com.serilum.realisticbees.config.ConfigHandler;
 import com.serilum.realisticbees.util.Reference;
+import com.serilum.realisticbees.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -32,10 +33,16 @@ public class BeeEvent {
 			return;
 		}
 
-		if (!(entity instanceof Bee)) {
+		if (!(entity instanceof Bee bee)) {
 			return;
 		}
-		
+
+		Util.setBeeSize(bee);
+
+		if (entity.getType() != EntityType.BEE) {
+			return;
+		}
+
 		Set<String> tags = entity.getTags();
 		if (tags.contains(Reference.MOD_ID + ".ignorebee")) {
 			return;
@@ -56,7 +63,6 @@ public class BeeEvent {
 			return;
 		}
 		
-		Bee bee = (Bee)entity;
 		if (bee.isBaby()) {
 			return;
 		}
