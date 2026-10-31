@@ -32,10 +32,14 @@ public class BeeEvent {
 			return;
 		}
 
-		if (!(entity instanceof Bee)) {
+		if (!(entity instanceof Bee bee)) {
 			return;
 		}
-		
+
+		if (entity.getType() != EntityType.BEE) {
+			return;
+		}
+
 		Set<String> tags = entity.getTags();
 		if (tags.contains(Reference.MOD_ID + ".ignorebee")) {
 			return;
@@ -56,7 +60,6 @@ public class BeeEvent {
 			return;
 		}
 		
-		Bee bee = (Bee)entity;
 		if (bee.isBaby()) {
 			return;
 		}

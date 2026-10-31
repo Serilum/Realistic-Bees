@@ -2,7 +2,9 @@ package com.serilum.realisticbees.mixin;
 
 import com.natamus.collective.functions.EntityFunctions;
 import com.serilum.realisticbees.config.ConfigHandler;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
@@ -33,12 +35,16 @@ public abstract class BeeMixin extends Animal {
 		Bee bee = (Bee)(Object)this;
 		if (ConfigHandler.preventBeeSuffocationDamage && damageSource.equals(bee.level().damageSources().inWall())) {
 			cir.setReturnValue(false);
+			return;
+		}
+
+		if (ConfigHandler.preventBeeCampfireDamage && damageSource.is(DamageTypes.IN_FIRE) && bee.level().getBlockState(bee.blockPosition()).is(BlockTags.CAMPFIRES)) {
+			cir.setReturnValue(false);
 		}
 	}
 
 	@Override
 	public @NotNull EntityDimensions getDimensions(@NotNull Pose pose) {
-		EntityDimensions defaultDimensions = (pose == Pose.SLEEPING ? SLEEPING_DIMENSIONS : super.getDimensions(pose).scale(this.getScale()));
-		return defaultDimensions.scale((float)ConfigHandler.beeSizeModifier);
+		return super.getDimensions(pose).scale((float)ConfigHandler.beeSizeModifier);
 	}
 }
