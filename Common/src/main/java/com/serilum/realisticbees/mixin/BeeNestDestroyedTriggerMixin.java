@@ -1,15 +1,12 @@
 package com.serilum.realisticbees.mixin;
 
-import net.minecraft.advancements.criterion.MinMaxBounds;
 import net.minecraft.advancements.criterion.BeeNestDestroyedTrigger;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.advancements.criterion.MinMaxBounds;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 import java.util.Optional;
 
@@ -17,13 +14,18 @@ import java.util.Optional;
 public class BeeNestDestroyedTriggerMixin {
 	@Shadow private @Final MinMaxBounds.Ints beesInside;
 
-	@Inject(method = "matches", at = @At(value = "HEAD"), cancellable = true)
-	public void matches(BlockState blockState, ItemStack itemStack, int numBees, CallbackInfoReturnable<Boolean> cir) {
+	@ModifyVariable(method = "matches", at = @At(value = "HEAD"), argsOnly = true, ordinal = 0)
+	public int matches_numBeesInside(int numBeesInside) {
 		Optional<Integer> minBeesInsideOptional = this.beesInside.min();
-		if (minBeesInsideOptional.isPresent()) {
-			if (minBeesInsideOptional.get() >= 3) {
-				cir.setReturnValue(true);
-			}
+		if (minBeesInsideOptional.isEmpty()) {
+			return numBeesInside;
 		}
+
+		int minBeesInside = minBeesInsideOptional.get();
+		if (minBeesInside < 3) {
+			return numBeesInside;
+		}
+
+		return Math.min(numBeesInside, minBeesInside);
 	}
 }
