@@ -6,7 +6,7 @@ iconFile="icon.png"
 
 [[mods]]
 modId="realisticbees"
-version="5.0"
+version="5.1"
 displayName="Realistic Bees"
 displayURL="https://serilum.com/mod/realistic-bees"
 authors="Serilum"
@@ -22,7 +22,7 @@ If you would like to contribute too, check out https://serilum.com/donate Apprec
 [[dependencies.realisticbees]]
     modId="collective"
     type="required"
-    versionRange="[8.71,)"
+    versionRange="[8.72,)"
     ordering="NONE"
     side="BOTH"
 
