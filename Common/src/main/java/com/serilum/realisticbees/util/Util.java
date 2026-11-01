@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Bee;
@@ -16,9 +17,24 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
 public class Util {
+	private static final ResourceLocation beeSizeModifierId = ResourceLocation.fromNamespaceAndPath(Reference.MOD_ID, "bee_size");
+
 	public static void setBeeSize(Bee bee) {
-		AttributeModifier beeSize = new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Reference.MOD_ID, "bee_size"), ConfigHandler.beeSizeModifier - 1.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+		AttributeModifier beeSize = new AttributeModifier(beeSizeModifierId, ConfigHandler.beeSizeModifier - 1.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
 		bee.getAttribute(Attributes.SCALE).addOrUpdateTransientModifier(beeSize);
+	}
+
+	public static boolean shouldScaleBeeModelClientSide(LivingEntity livingEntity) {
+		if (!ConfigHandler.clientSideBeeSizeFallback) {
+			return false;
+		}
+
+		if (!(livingEntity instanceof Bee bee)) {
+			return false;
+		}
+
+		boolean serverAlreadyChangedBeeSize = bee.getAttribute(Attributes.SCALE).hasModifier(beeSizeModifierId);
+		return !serverAlreadyChangedBeeSize;
 	}
 
 	public static boolean isNectarDeliveryCounted() {

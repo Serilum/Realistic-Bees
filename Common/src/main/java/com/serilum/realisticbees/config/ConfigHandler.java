@@ -11,6 +11,7 @@ public class ConfigHandler extends DuskConfig {
 	public static HashMap<String, List<String>> configMetaData = new HashMap<String, List<String>>();
 
 	@Entry(min = 0.01, max = 5.0) public static double beeSizeModifier = 0.25;
+	@Entry public static boolean clientSideBeeSizeFallback = false;
 	@Entry(min = 0, max = 50) public static int extraBeeSpawnsPerBee = 9;
 	@Entry(min = 0, max = 50) public static int beeHiveBeeSpace = 20;
 	@Entry public static boolean preventBeeSuffocationDamage = true;
@@ -21,6 +22,9 @@ public class ConfigHandler extends DuskConfig {
 	public static void initConfig() {
 		configMetaData.put("beeSizeModifier", Arrays.asList(
 			"This value determines the size of a bee. By default 0.25, which means they are 1/4th of their vanilla size. Set to 1.0 to disable the different bee size feature."
+		));
+		configMetaData.put("clientSideBeeSizeFallback", Arrays.asList(
+			"When enabled, bees on a server without the mod are made smaller on your screen only, using 'beeSizeModifier'. Their hitbox stays vanilla size there. Servers with the mod and singleplayer are unaffected, they change the actual bee size."
 		));
 		configMetaData.put("extraBeeSpawnsPerBee", Arrays.asList(
 			"In order to make bees a little more common. Whenever a bee naturally spawns, the mod spawns an additional 'extraBeeSpawnsPerBee' bees."
